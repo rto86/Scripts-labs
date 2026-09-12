@@ -57,7 +57,7 @@ Dispones de scripts con menús interactivos para gestionar el laboratorio de for
 Abre PowerShell y descarga el script:
 PowerShell
 
-Invoke-WebRequest -Uri "[https://raw.githubusercontent.com/rto86/Scripts_labs/main/rtolabs.ps1](https://raw.githubusercontent.com/rto86/Scripts_labs/main/rtolabs.ps1)" -OutFile "rtolabs.ps1"
+Invoke-WebRequest -Uri "[https://raw.githubusercontent.com/rto86/Scripts-labs/main/rtolabs.ps1](https://raw.githubusercontent.com/rto86/Scripts-labs/main/rtolabs.ps1)" -OutFile "rtolabs.ps1"
 
 Ejecútalo en tu terminal:
 PowerShell
