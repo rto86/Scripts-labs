@@ -36,7 +36,7 @@ los laboratorios vulnerables de RtoLabs utilizando contenedores Docker.
 
 * EN LINUX / MAC OS:
   1. Abrir la terminal y descargar el script:
-     curl -O https://raw.githubusercontent.com/rto86/Scripts_labs/main/rtolabs.sh
+     curl -O https://raw.githubusercontent.com/rto86/Scripts-labs/main/rtolabs.sh
 
   2. Dar permisos de ejecucion:
      chmod +x rtolabs.sh
@@ -47,7 +47,7 @@ los laboratorios vulnerables de RtoLabs utilizando contenedores Docker.
 
 * EN WINDOWS (PowerShell):
   1. Abrir PowerShell y descargar el script:
-     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/rto86/Scripts_labs/main/rtolabs.ps1" -OutFile "rtolabs.ps1"
+     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/rto86/Scripts-labs/main/rtolabs.ps1" -OutFile "rtolabs.ps1"
 
   2. Ejecutar:
      .\rtolabs.ps1
