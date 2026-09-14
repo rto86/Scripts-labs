@@ -1,6 +1,4 @@
-# ==============================================================================
-# RtoLabs - Gestor Universal de Laboratorios (PowerShell)
-# ==============================================================================
+# RtoLabs - Gestor Universal de Laboratorios
 
 $GhcrUser = "rto86"
 
@@ -10,7 +8,7 @@ function Get-LabInfo {
     $global:LabName = $global:LabName.Trim().ToLower()
 
     if ([string]::IsNullOrWhiteSpace($global:LabName)) {
-        Write-Host "[-] El nombre del laboratorio no puede estar vacío." -ForegroundColor Red
+        Write-Host "[-] El nombre del laboratorio no puede estar vacío."
         Pause
         Show-Menu
     }
@@ -21,17 +19,17 @@ function Get-LabInfo {
 
 function Show-Menu {
     Clear-Host
-    Write-Host "==========================================" -ForegroundColor Purple
-    Write-Host "      RtoLabs - Gestor Universal           " -ForegroundColor White
-    Write-Host "==========================================" -ForegroundColor Purple
+    Write-Host "=========================================="
+    Write-Host "      RtoLabs - Gestor Universal           "
+    Write-Host "=========================================="
     Write-Host "1) Desplegar / Arrancar un laboratorio"
     Write-Host "2) Detener un laboratorio"
     Write-Host "3) Reiniciar un laboratorio detenido"
     Write-Host "4) Destruir contenedor y limpiar"
     Write-Host "5) Ver contenedores en ejecución"
     Write-Host "6) Salir"
-    Write-Host "==========================================" -ForegroundColor Purple
-    
+    Write-Host "=========================================="
+
     $choice = Read-Host "Selecciona una opción [1-6]"
 
     switch ($choice) {
@@ -41,55 +39,55 @@ function Show-Menu {
             if ([string]::IsNullOrWhiteSpace($port)) { $port = "5000" }
 
             Write-Host ""
-            Write-Host "[+] Descargando imagen $global:ImageName..." -ForegroundColor Green
+            Write-Host "[+] Descargando imagen $global:ImageName..."
             docker pull $global:ImageName
 
-            Write-Host "[+] Desplegando contenedor $global:ContainerName en puerto $port..." -ForegroundColor Green
+            Write-Host "[+] Desplegando contenedor $global:ContainerName en puerto $port..."
             docker run -d --name $global:ContainerName -p "${port}:5000" $global:ImageName
 
             Write-Host ""
-            Write-Host "[!] Laboratorio $($global:LabName) activo en: http://localhost:$port" -ForegroundColor Cyan
+            Write-Host "[!] Laboratorio $($global:LabName) activo en: http://localhost:$port"
             Pause
             Show-Menu
         }
         '2' {
             Get-LabInfo
-            Write-Host "[+] Deteniendo el laboratorio $global:ContainerName..." -ForegroundColor Yellow
+            Write-Host "[+] Deteniendo el laboratorio $global:ContainerName..."
             docker stop $global:ContainerName
-            Write-Host "[!] Contenedor detenido." -ForegroundColor Yellow
+            Write-Host "[!] Contenedor detenido."
             Pause
             Show-Menu
         }
         '3' {
             Get-LabInfo
-            Write-Host "[+] Volviendo a arrancar $global:ContainerName..." -ForegroundColor Green
+            Write-Host "[+] Volviendo a arrancar $global:ContainerName..."
             docker start $global:ContainerName
-            Write-Host "[!] Laboratorio reanudado." -ForegroundColor Cyan
+            Write-Host "[!] Laboratorio reanudado."
             Pause
             Show-Menu
         }
         '4' {
             Get-LabInfo
-            Write-Host "[+] Destruyendo el contenedor $global:ContainerName..." -ForegroundColor Red
+            Write-Host "[+] Destruyendo el contenedor $global:ContainerName..."
             docker rm -f $global:ContainerName
-            Write-Host "[!] Limpieza completada." -ForegroundColor Red
+            Write-Host "[!] Limpieza completada."
             Pause
             Show-Menu
         }
         '5' {
             Write-Host ""
-            Write-Host "[+] Estado de los contenedores de RtoLabs:" -ForegroundColor Cyan
+            Write-Host "[+] Estado de los contenedores de RtoLabs:"
             docker ps -a --filter "name=-lab"
             Write-Host ""
             Pause
             Show-Menu
         }
         '6' {
-            Write-Host "¡Buena suerte en las auditorías de RtoLabs!" -ForegroundColor Purple
+            Write-Host "¡Buena suerte en las auditorías de RtoLabs!"
             exit
         }
         Default {
-            Write-Host "Opción no válida." -ForegroundColor Red
+            Write-Host "Opción no válida."
             Start-Sleep -Seconds 1
             Show-Menu
         }
