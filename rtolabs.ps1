@@ -8,7 +8,7 @@ function Get-LabInfo {
     $global:LabName = $global:LabName.Trim().ToLower()
 
     if ([string]::IsNullOrWhiteSpace($global:LabName)) {
-        Write-Host "[-] El nombre del laboratorio no puede estar vacío."
+        Write-Host "[-] El nombre del laboratorio no puede estar vacio."
         Pause
         Show-Menu
     }
@@ -26,11 +26,11 @@ function Show-Menu {
     Write-Host "2) Detener un laboratorio"
     Write-Host "3) Reiniciar un laboratorio detenido"
     Write-Host "4) Destruir contenedor y limpiar"
-    Write-Host "5) Ver contenedores en ejecución"
+    Write-Host "5) Ver contenedores en ejecucion"
     Write-Host "6) Salir"
     Write-Host "=========================================="
 
-    $choice = Read-Host "Selecciona una opción [1-6]"
+    $choice = Read-Host "Selecciona una opcion [1-6]"
 
     switch ($choice) {
         '1' {
@@ -83,11 +83,11 @@ function Show-Menu {
             Show-Menu
         }
         '6' {
-            Write-Host "¡Buena suerte en las auditorías de RtoLabs!"
+            Write-Host "¡Buena suerte en las auditorias de RtoLabs!"
             exit
         }
         Default {
-            Write-Host "Opción no válida."
+            Write-Host "Opcion no valida."
             Start-Sleep -Seconds 1
             Show-Menu
         }
