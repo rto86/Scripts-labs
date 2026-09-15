@@ -53,7 +53,7 @@ Dispones de scripts con menús interactivos para gestionar el laboratorio de for
 1. Descarga el script ejecutable:
 
 ```bash
-curl -O [https://raw.githubusercontent.com/rto86/Scripts_labs/main/rtolabs.sh](https://raw.githubusercontent.com/rto86/Scripts_labs/main/rtolabs.sh)
+curl -O https://raw.githubusercontent.com/rto86/Scripts_labs/main/rtolabs.sh
 ```
 
 Otorga permisos de ejecución:
