@@ -73,7 +73,7 @@ Ejecútalo en tu terminal:
 Abre PowerShell y descarga el script:
 
 ```PowerShell
-Invoke-WebRequest -Uri "[https://raw.githubusercontent.com/rto86/Scripts-labs/main/rtolabs.ps1](https://raw.githubusercontent.com/rto86/Scripts-labs/main/rtolabs.ps1)" -OutFile "rtolabs.ps1"
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/rto86/Scripts-labs/main/rtolabs.ps1" -OutFile "rtolabs.ps1"
 ```
 
 Ejecútalo en tu terminal:
@@ -84,7 +84,7 @@ Ejecútalo en tu terminal:
 
  Nota para Windows: Si PowerShell bloquea la ejecución de scripts por políticas de seguridad, ejecuta primero:
 
- ```PowerShel
+ ```PowerShell
  Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
  ```
 
