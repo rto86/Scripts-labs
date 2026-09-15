@@ -84,9 +84,9 @@ Ejecútalo en tu terminal:
 
  Nota para Windows: Si PowerShell bloquea la ejecución de scripts por políticas de seguridad, ejecuta primero:
 
- ```PowerShell
- Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
- ```
+```PowerShell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
 
 ## Método 2: Comandos Genéricos Directos (Docker CLI)
 
